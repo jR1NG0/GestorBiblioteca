@@ -14,7 +14,7 @@
                 
                 <div class="panel-body">
                     <div class="col-md-4 col-md-offset-8">
-                        <a class="btn btn-primary btn-block" href='/peliculas/create'>Agregar Nueva Pelicula</a>
+                        <a class="btn btn-primary btn-block" href='/ejemplares/create'>Agregar Nuevo Ejemplar</a>
                     </div>
                     @foreach($datos as $dato) 
                         <div class="col-md-10 col-md-offset-1">
@@ -30,10 +30,10 @@
                             <br>
                             <div class="col-md-8 col-md-offset-2" style="float: bottom;">
                                 <div class="col-md-6">
-                                    <a class="btn btn-success btn-md btn-block" href='/peliculas/{{ $dato['id'] }}/edit'>Editar</a>{{-- ruta que hace referencia al edit de peliculas --}}
+                                    <a class="btn btn-success btn-md btn-block" href='/ejemplares/{{ $dato['id'] }}/edit'>Editar</a>{{-- ruta que hace referencia al edit de peliculas --}}
                                 </div>
                                 <div class="col-md-6">
-                                    <form method="POST" action="{{ url('/peliculas/'.$dato['id']) }}">
+                                    <form method="POST" action="{{ url('/ejemplares/'.$dato['id']) }}">
                                         <input type="hidden" name="_method" value="DELETE"> {{-- Se requiere especificar un input de este tipo para enviar una peticion de tipo DELETE --}}
                                         {{ csrf_field() }}
                                         <input type="submit" class="btn btn-danger btn-block" value="Eliminar">

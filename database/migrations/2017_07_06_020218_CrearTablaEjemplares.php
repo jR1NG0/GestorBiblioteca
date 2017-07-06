@@ -18,7 +18,7 @@ class CrearTablaEjemplares extends Migration
             $table->integer('libro_id')->unsigned();
             $table->foreign('libro_id')->references('id')->on('libros');
             $table->integer('estado_id')->unsigned();
-            $table->foreign('estado_id')->references('id')->on('estado');
+            $table->foreign('estado_id')->references('id')->on('estados');
             $table->integer('usuario_id')->unsigned();
             $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->date('fecha_prestamo');

@@ -5,47 +5,58 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear Nueva Ejemplar</div>
+                <div class="panel-heading">Crear Nuevo Ejemplar</div>
                 @include('errores')
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/ejemplares') }}">
                         {{ csrf_field() }} {{--  token necesario para realizar la consulta --}}
 
-                        <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                      <div class="form-group">
+                            <label for="libro_id" class="col-md-4 control-label">Seleccione Libro</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="nombre" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="anno_estreno" class="col-md-4 control-label">Año de Estreno</label>
-
-                            <div class="col-md-6">
-                                <input type="date" class="form-control" name="anno_estreno" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="id_genero" class="col-md-4 control-label">Genero</label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="id_genero" >
-                                 {{--  se recorreran los generos enviados desde el servidor --}}
-                                   @foreach ($generos as $genero)
-                                         <option value="{{ $genero->id_genero }}">{{ $genero->descripcion }}</option> 
+                                <select class="form-control" name="libro_id" >
+                                   @foreach ($libros as $libro)
+                                         <option value="{{ $libro->libro_id }}">{{ $libro->titulo }}</option> 
                                     @endforeach
                                 </select>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="director" class="col-md-4 control-label">Nombre de Director</label>
+                            <label for="estado_id" class="col-md-4 control-label">Estado</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="director" >
+                                <select class="form-control" name="estado_id" >
+                                   @foreach ($estados as $estado)
+                                         <option value="{{ $estado->estado_id }}">{{ $estado->descripcion }}</option> 
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
+
+                         <div class="form-group">
+                            <label for="usuario_id" class="col-md-4 control-label">Seleccione usuario</label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="usuario_id" >
+                                   @foreach ($usuarios as $usuario)
+                                         <option value="{{ $usuario->usuario_id }}">{{ $usuario->nombre }}</option> 
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="form-group">
-                            <label for="sinopsis" class="col-md-4 control-label">Sinopsis</label>
+                            <label for="fecha_prestamo" class="col-md-4 control-label">Fecha de prestamo</label>
+                            <div class="col-md-6">
+                                <input type="date" class="form-control" name="fecha_prestamo" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha_devolucion" class="col-md-4 control-label">Fecha de devolución</label>
 
                             <div class="col-md-6">
-                                <textarea type="date" class="form-control" name="sinopsis" ></textarea>
+                                <input type="date" class="form-control" name="fecha_devolucion" >
                             </div>
                         </div>
 

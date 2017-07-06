@@ -20,7 +20,7 @@ class CrearTablaLibros extends Migration
             $table->integer('autor_id')->unsigned();
             $table->foreign('autor_id')->references('id')->on('autores');
             $table->integer('genero_id')->unsigned();
-            $table->foreign('genero_id')->references('id')->on('generos');
+            $table->foreign('genero_id')->references('id_genero')->on('generos');
             $table->nullableTimestamps();
         });
     }

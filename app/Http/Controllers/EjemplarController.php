@@ -3,20 +3,18 @@
 namespace GestorBiblioteca\Http\Controllers;
 
 use Illuminate\Http\Request;
-use GestorBiblioteca\Http\Requests\EjemplarRequest; // request personalizado creado para la validacion de datos del formulario
-//uso de modelos
-use GestorBiblioteca\Ejemplar;   
-use GestorBiblioteca\Genero; 
+use GestorBiblioteca\Http\Requests\EjemplarRequest; 
+use GestorBiblioteca\Ejemplar;    
 use GestorBiblioteca\Libro;
 use GestorBiblioteca\Usuario;
-//uso de componentes
-use Redirect; // redireccionamiento a otra ruta
-use Session;    // comunicador de mensajes hacia el cliente
+use GestorBiblioteca\Estado;
+
+use Redirect; 
+use Session;   
 
 class EjemplarController extends Controller
 {   
 
-    // Constructor
     public function __construct()
     {   
         // utiliza el middleware auth
@@ -36,13 +34,16 @@ class EjemplarController extends Controller
         $contador = 0;
 
         // se obtenendran los valores de cada ejemplar y se almacenaran en un array para ser retornados hacia la vista
-        foreach ($ejemplares as $ejemplares) {
-            $genero = Genero::find($ejemplar->id_genero); // se busca el genero especifico de la ejemplar, buscando el id
+        foreach ($ejemplares as $ejemplar) {
+            $libro = Libro::find($ejemplar->libro_id);
+            $estado = Estado::find($ejemplar->estado_id);
+            $usuario = Usuario::find($ejemplar->usuario_id);
+            // se busca el genero especifico de la ejemplar, buscando el id
 
             // asigancion de valores
             $datos[$contador]["id"] = $ejemplar->id_ejemplar;
             $datos[$contador]["libro"] = $libro->titulo;
-            $datos[$contador]["genero"] = $genero->descripcion;
+            $datos[$contador]["estado"] = $estado->descripcion;
             $datos[$contador]["usuario"]= $usuario->nombre;
             $datos[$contador]["fecha_prestamo"] = $ejemplar->fecha_prestamo;
             $datos[$contador]["fecha_devolucion"] = $ejemplar->fecha_devolucion;
@@ -59,11 +60,13 @@ class EjemplarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-        $generos = Genero::all(); // se obtiene todos los generos
+    {   $libros = Libro::all();
+        $estados = Estado::all();
+        $usuarios = Usuario::all();
+        
         
         // retorno de vista y datos que listara
-        return view("/createEjemplar",compact('generos'));
+        return view("/crearEjemplar",compact('libros','estados','usuarios'));
     }
 
     /**
@@ -109,11 +112,14 @@ class EjemplarController extends Controller
      */
     public function edit($id)
     {
-        $ejemplar = ejemplar::find($id); // se busca la ejemplar
-        $generos = Genero::all(); // se busca la ejemplar
+        $ejemplares = Ejemplar::find($id);
+        $libros = Libro::all();
+        $estados = Estado::all();
+        $usuarios = Usuario::all();
+        //$generos = Genero::all(); // se busca la ejemplar
 
         // se retorna la vista  y los datos
-        return view('editEjemplar', compact('ejemplar','generos'));
+        return view('editEjemplar', compact('ejemplar','libros','estados','usuarios'));
     }
 
     /**

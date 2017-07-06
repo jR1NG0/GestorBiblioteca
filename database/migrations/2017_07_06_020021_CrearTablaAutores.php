@@ -17,7 +17,7 @@ class CrearTablaAutores extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellido');
-            $table->nullableTimestamps()
+            $table->nullableTimestamps();
         });
     }
 

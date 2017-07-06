@@ -8,7 +8,7 @@ class Estado extends Model
 {
    
 
-    protected $table = 'estado';
+    protected $table = 'estados';
 
     /**
      * The attributes that are mass assignable.
