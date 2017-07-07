@@ -11,27 +11,27 @@ class AutorSeeder extends Seeder {
   public function run()
   {
   	\DB::table('autores')->insert([
-  		'id' => 1,
+  		'autor_id' => 1,
   		'nombre' => 'Edgar Allan',
       'apellido' => 'Poe',
   		]);
   	\DB::table('autores')->insert([
-  		'id' => 2,
+  		'autor_id' => 2,
   		'nombre' => 'George',
       'apellido' => 'Martin',
   		]);
   	\DB::table('autores')->insert([
-  		'id' => 3,
+  		'autor_id' => 3,
       'nombre' => 'Mark',
       'apellido' => 'Twain',
   		]);
   	\DB::table('autores')->insert([
-  		'id' => 4,
+  		'autor_id' => 4,
       'nombre' => 'León',
       'apellido' => 'Tolstoi',
   		]);
     \DB::table('autores')->insert([
-      'id' => 5,
+      'autor_id' => 5,
       'nombre' => 'William',
       'apellido' => 'Shakespeare',
     ]);

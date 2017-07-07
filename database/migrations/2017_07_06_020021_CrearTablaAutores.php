@@ -14,10 +14,10 @@ class CrearTablaAutores extends Migration
     public function up()
     {
         Schema::create('autores', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('autor_id');
             $table->string('nombre');
             $table->string('apellido');
-            $table->nullableTimestamps();
+             
         });
     }
 

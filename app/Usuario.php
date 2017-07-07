@@ -10,12 +10,16 @@ class Usuario extends Model {
 	
 	protected $table = 'usuarios';
 
+	protected $primaryKey = 'usuario_id';
+
+    public $timestamps = false;
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = [ 'id', 'nombre', 'apellido', 'rut','telefono',];
+	protected $fillable = ['nombre', 'apellido','rut','telefono',];
 
 
 	/**

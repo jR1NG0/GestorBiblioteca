@@ -4,7 +4,7 @@ namespace GestorBiblioteca\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EjemplarRequest extends FormRequest
+class UsuarioRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,11 +26,11 @@ class EjemplarRequest extends FormRequest
         // se definen las reglas para el request entrante a la aplicacion
         return [
             
-            'libro_id' => 'required|numeric',
-            'estado_id' => 'required|numeric',
-            'usuario_id' => 'required|numeric',
-            'fecha_prestamo' => 'required|date'
-            'fecha_devolucion' => 'required|date'
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'rut' => 'required',
+            'telefono' => 'required|numeric',
+                   
         ];
     }
 }

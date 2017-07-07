@@ -10,13 +10,18 @@ class Libro extends Model
    
     protected $table = 'libros';
 
+    protected $primaryKey = 'libro_id';
+   
+
+    public $timestamps = false;
+
     /**
      * 
      *
      * @var array
      */
     protected $fillable = [
-       'id', 'titulo','anno','autor_id','genero_id',
+       'titulo','anno','autor_id','id_genero',
     ];
 
 

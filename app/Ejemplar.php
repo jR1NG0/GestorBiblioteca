@@ -10,13 +10,16 @@ class Ejemplar extends Model
 
     protected $table = 'ejemplares';
 
+    protected $primaryKey = 'ejemplar_id';
+
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-       'id', 'libro_id', 'estado_id','usuario_id','fecha_prestamo','fecha_devolucion',
+       'libro_id', 'estado_id','usuario_id','fecha_prestamo','fecha_devolucion',
     ];
 
 

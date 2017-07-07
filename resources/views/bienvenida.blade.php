@@ -1,4 +1,4 @@
-@extends('app')
+@extends('master')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
 				<div class="panel-heading">Inicio</div>
 
 				<div class="panel-body">
-					Por favor inicie sesión para usa el sistema
+					Por favor inicie sesión para usar el sistema
 				</div>
 			</div>
 		</div>

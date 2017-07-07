@@ -51,7 +51,7 @@ class EjemplarController extends Controller
             $contador++;
         }
         // retorno de vista y datos que listara
-        return view("/home", compact('datos'));
+        return view("/ejemplares", compact('datos'));
     }
 
     /**
@@ -116,9 +116,7 @@ class EjemplarController extends Controller
         $libros = Libro::all();
         $estados = Estado::all();
         $usuarios = Usuario::all();
-        //$generos = Genero::all(); // se busca la ejemplar
-
-        // se retorna la vista  y los datos
+        
         return view('editEjemplar', compact('ejemplar','libros','estados','usuarios'));
     }
 

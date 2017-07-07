@@ -14,16 +14,16 @@ class CrearTablaEjemplares extends Migration
     public function up()
     {
         Schema::create('ejemplares', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('ejemplar_id');
             $table->integer('libro_id')->unsigned();
-            $table->foreign('libro_id')->references('id')->on('libros');
+            $table->foreign('libro_id')->references('libro_id')->on('libros'); 
             $table->integer('estado_id')->unsigned();
-            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->foreign('estado_id')->references('estado_id')->on('estados');
             $table->integer('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->foreign('usuario_id')->references('usuario_id')->on('usuarios');
             $table->date('fecha_prestamo');
             $table->date('fecha_devolucion');
-            $table->nullableTimestamps();;
+            
         });
     }
 

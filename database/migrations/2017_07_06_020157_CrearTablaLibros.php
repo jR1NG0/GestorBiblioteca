@@ -14,14 +14,14 @@ class CrearTablaLibros extends Migration
     public function up()
     {
         Schema::create('libros', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('libro_id');
             $table->string('titulo');
-            $table->string('anno');
+            $table->date('anno');
             $table->integer('autor_id')->unsigned();
-            $table->foreign('autor_id')->references('id')->on('autores');
-            $table->integer('genero_id')->unsigned();
-            $table->foreign('genero_id')->references('id_genero')->on('generos');
-            $table->nullableTimestamps();
+            $table->foreign('autor_id')->references('autor_id')->on('autores');
+            $table->integer('id_genero')->unsigned();
+            $table->foreign('id_genero')->references('id_genero')->on('generos');
+            
         });
     }
 

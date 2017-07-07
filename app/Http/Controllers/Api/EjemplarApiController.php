@@ -8,6 +8,9 @@ use GestorBiblioteca\Http\Requests\EjemplarRequest; // request personalizado cre
 //uso de modelos
 use GestorBiblioteca\Ejemplar;   
 use GestorBiblioteca\Genero;
+use GestorBiblioteca\Estado;
+use GestorBiblioteca\Usuario;
+use GestorBiblioteca\Libro;
 
 //uso de componentes
 use Redirect; // redireccionamiento a otra ruta

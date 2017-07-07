@@ -10,13 +10,17 @@ class Autor extends Model
 
     protected $table = 'autores';
 
+    protected $primaryKey = 'autor_id';
+
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-       'id', 'nombre', 'apellido',
+        'nombre', 'apellido',
     ];
 
     

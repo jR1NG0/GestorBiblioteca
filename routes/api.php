@@ -19,7 +19,7 @@ Route::get('user', function (Request $request) {
 
 Route::group(['middleware' => ['cors']], function () {
 
-	Route::resource('peliculas', 'Api\PeliculaApiController');
+	Route::resource('ejemplares', 'Api\EjemplarApiController');
 
 });
 

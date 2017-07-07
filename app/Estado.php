@@ -10,13 +10,16 @@ class Estado extends Model
 
     protected $table = 'estados';
 
+    protected $primaryKey = 'estado_id';
+
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-       'id', 'descripcion',
+        'descripcion',
     ];
 
 

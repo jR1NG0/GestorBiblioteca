@@ -4,7 +4,7 @@ namespace GestorBiblioteca\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PeliculaRequest extends FormRequest
+class LibroRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,11 +25,12 @@ class PeliculaRequest extends FormRequest
     {   
         // se definen las reglas para el request entrante a la aplicacion
         return [
-            'nombre' => 'required',
-            'anno_estreno' => 'required|date',
+            
+            'titulo' => 'required',
+            'anno' => 'required|date',
+            'autor_id' => 'required|numeric',
             'id_genero' => 'required|numeric',
-            'director' => 'required',
-            'sinopsis' => 'required'
+                   
         ];
     }
 }

@@ -12,13 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('bienvenida');
 });
 
 // definicion de ruta tipo resource de pelicula
 // se puede revisar las formas en que se puede acceder a esta ruta con
 //php artisan route:list
-
-Route::resource('/peliculas', 'PeliculaController');
+Route::resource('/inicio', 'InicioController');
 Route::resource('/ejemplares', 'EjemplarController');
+Route::resource('/libros', 'LibroController' );
+Route::resource('/usuarios', 'UsuarioController' );
 Auth::routes();

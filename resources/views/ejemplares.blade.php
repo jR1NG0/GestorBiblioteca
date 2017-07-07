@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('master')
 
 @section('content')
 <div class="container">
@@ -9,7 +9,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     <br>
                     {{--  se incluye las alertas --}}
-                    @include('alerts')
+                      @include('alerts')
                 </div>
                 
                 <div class="panel-body">
@@ -19,14 +19,11 @@
                     @foreach($datos as $dato) 
                         <div class="col-md-10 col-md-offset-1">
                             {{-- Se listaran los datos obtenidos como arreglo --}}
-                            <h3>{{ $dato['nombre'] }}</h3>
-                            <h4>Director: {{ $dato['director'] }}</h4>
-                            <h4>Año Estreno: {{ $dato['anno_estreno'] }}</h4>
-                            <h4>Genero: {{ $dato['genero'] }}</h4>
-                            <h3>Sinopsis</h3>
-                            <div style="word-wrap: break-word;">
-                                <p>{{ $dato['sinopsis'] }}</p>
-                            </div>
+                            <h3>{{ $dato['libro'] }}</h3>
+                            <h4>Estado: {{ $dato['estado'] }}</h4>
+                            <h4>Usuario: {{ $dato['usuario'] }}</h4>
+                            <h4>Fecha de prestamo: {{ $dato['fecha_prestamo'] }}</h4>
+                            <h3>Fecha de devolucion: {{ $dato['fecha_devolucion']}}</h3>
                             <br>
                             <div class="col-md-8 col-md-offset-2" style="float: bottom;">
                                 <div class="col-md-6">

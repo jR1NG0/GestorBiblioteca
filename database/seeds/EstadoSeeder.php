@@ -11,11 +11,11 @@ class EstadoSeeder extends Seeder {
   public function run()
   {
   	\DB::table('estados')->insert([
-  		'id' => 1,
+  		'estado_id' => 1,
   		'descripcion' => 'Disponible',
   		]);
   	\DB::table('estados')->insert([
-  		'id' => 2,
+  		'estado_id' => 2,
   		'descripcion' => 'Ocupado',
   		]);
   }

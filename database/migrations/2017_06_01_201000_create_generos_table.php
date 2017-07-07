@@ -14,7 +14,6 @@ class CreateGenerosTable extends Migration
     public function up()
     {
         Schema::create('generos', function (Blueprint $table) {
-            // se definen las respectivas columnas de la tabla
             $table->increments('id_genero');
             $table->string('descripcion',50);
         });
